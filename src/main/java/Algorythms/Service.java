@@ -39,7 +39,7 @@ public class Service {
                 numbers[i++] = Integer.parseInt(str);
             }
         }catch (NumberFormatException e){
-            throw new NumberFormatException("wrong format or no number given ");
+            throw new NumberFormatException("wrong format or empty input");
         }
         return numbers;
     }
