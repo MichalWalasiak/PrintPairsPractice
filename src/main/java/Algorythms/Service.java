@@ -1,12 +1,9 @@
 package Algorythms;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Service {
     Scanner scanner = new Scanner(System.in);
-
-
 
     public Integer[] parse(String[] input){
         int i = 0;
