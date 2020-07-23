@@ -22,7 +22,6 @@ public class Service {
     }
 
     public String[] getNumbers() {
-        String[] input = scanner.nextLine().split(",");
-        return input;
+        return scanner.nextLine().split(",");
     }
 }
