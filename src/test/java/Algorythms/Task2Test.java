@@ -10,15 +10,15 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PrintPairsTest {
-    private PrintPairs printPairs;
+class Task2Test {
+    private Task2 task2;
     private Integer[] integers;
     private Map<Integer, Integer> pairs;
 
 
     @BeforeEach
     void initializeData() {
-        printPairs = new PrintPairs();
+        task2 = new Task2();
         integers = new Integer[]{1, 2, 10, 7, 5, 3, 6, 6, 13, 0};
         pairs = new HashMap<>();
     }
@@ -27,7 +27,7 @@ class PrintPairsTest {
     @DisplayName("should assign value to key equals to number of occurrence key in array")
     void findPairs_returnsMap_withProperKeyValue() {
         // when
-        printPairs.findPairs(integers, 13, pairs);
+        task2.findPairs(integers, 13, pairs);
 
         // than
         assertEquals(pairs.get(6), 2);
@@ -38,7 +38,7 @@ class PrintPairsTest {
     @DisplayName("should return map with size equals to the distinct numbers given in array")
     void findPairs_returnsMap_withProperSize() {
         // when
-        printPairs.findPairs(integers, 13, pairs);
+        task2.findPairs(integers, 13, pairs);
 
         // than
         assertEquals(pairs.size(), 9);

@@ -3,7 +3,7 @@ package Algorythms;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PrintPairs {
+public class Task2 {
 
     public Map<Integer, Integer> findPairs (Integer[] input, int sum, Map<Integer, Integer> pairs) {
 
@@ -35,13 +35,13 @@ public class PrintPairs {
     public static void main(String[] args) {
         NumberService numberService = new NumberService();
         ParseService parseService = new ParseService();
-        PrintPairs printPairs = new PrintPairs();
+        Task2 task2 = new Task2();
 
         int sum = 100;
         String[] input = numberService.getNumbers();
         Integer[] numbers = parseService.parse(input);
         Map<Integer, Integer> pairs = new HashMap<>();
 
-        printPairs.findPairs(numbers, sum, pairs);
+        task2.findPairs(numbers, sum, pairs);
    }
 }
