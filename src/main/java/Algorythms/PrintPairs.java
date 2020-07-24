@@ -5,22 +5,21 @@ import java.util.Map;
 
 public class PrintPairs {
 
-    public static Map<Integer, Integer> findPairs (Integer[] input, int sum) {
-        Map<Integer, Integer> map = new HashMap<>();
+    public Map<Integer, Integer> findPairs (Integer[] input, int sum, Map<Integer, Integer> pairs) {
 
-        for (final Integer anInt : input) {
-            if (anInt <= sum && anInt >= 0) {
-                if (map.containsKey(anInt)) {
-                    map.replace(anInt, map.get(anInt) + 1);
+        for (final Integer mapKey : input) {
+            if (mapKey <= sum && mapKey >= 0) {
+                if (pairs.containsKey(mapKey)) {
+                    pairs.replace(mapKey, pairs.get(mapKey) + 1);
                 } else {
-                    map.put(anInt, 1);
+                    pairs.put(mapKey, 1);
                 }
             }
         }
 
         for (Integer i = 0, j = sum; i < j; i++) {
-            Integer leftCount = map.getOrDefault(i,0);
-            Integer rightCount = map.getOrDefault(j, 0);
+            Integer leftCount = pairs.getOrDefault(i,0);
+            Integer rightCount = pairs.getOrDefault(j, 0);
             int CountSum = leftCount * rightCount;
 
             if (i + j == sum){
@@ -30,17 +29,19 @@ public class PrintPairs {
                 j--;
             }
         }
-        return map;
+        return pairs;
     }
 
     public static void main(String[] args) {
         NumberService numberService = new NumberService();
         ParseService parseService = new ParseService();
+        PrintPairs printPairs = new PrintPairs();
 
         int sum = 100;
         String[] input = numberService.getNumbers();
         Integer[] numbers = parseService.parse(input);
+        Map<Integer, Integer> pairs = new HashMap<>();
 
-        findPairs(numbers, sum);
+        printPairs.findPairs(numbers, sum, pairs);
    }
 }
