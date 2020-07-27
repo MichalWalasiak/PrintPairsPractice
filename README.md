@@ -4,4 +4,4 @@ arranged in ascending order. First number from pair should be not bigger than se
 
 The Application is written in java version 11.
 
-Run main method in Task2 class to start program and provide positive integers separated with space.
+Run main method in Task2 class to start program and provide positive integers separated with space as an input.
