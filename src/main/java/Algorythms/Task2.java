@@ -18,19 +18,19 @@ public class Task2 {
             }
         }
 
-        for (Integer i = 0, j = sum; i <= j; i++) {
-            Integer leftCount = pairs.getOrDefault(i, 0);
+        for (Integer mapKey = 0, j = sum; mapKey <= j; mapKey++) {
+            Integer leftCount = pairs.getOrDefault(mapKey, 0);
             Integer rightCount = pairs.getOrDefault(j, 0);
             int CountSum = leftCount * rightCount;
 
-            if (i + j == sum) {
-                if (i == j) {
+            if (mapKey + j == sum) {
+                if (mapKey == j) {
                     for (int l = 0; l < leftCount - 1; l++) {
-                        System.out.println(i + " " + j);
+                        System.out.println(mapKey + " " + j);
                     }
                 } else {
                     for (int k = 0; k < CountSum; k++) {
-                        System.out.println(i + " " + j);
+                        System.out.println(mapKey + " " + j);
                     }
                 }
                 j--;
@@ -44,7 +44,7 @@ public class Task2 {
         ParseService parseService = new ParseService();
         Task2 task2 = new Task2();
 
-        int sum = 100;
+        int sum = 13;
         String[] input = numberService.getNumbers();
         Integer[] numbers = parseService.parse(input);
         Map<Integer, Integer> pairs = new HashMap<>();
