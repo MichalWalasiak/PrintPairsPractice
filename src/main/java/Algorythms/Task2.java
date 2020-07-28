@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class Task2 {
 
+
     public Map<Integer, Integer> findPairs (Integer[] input, int sum, Map<Integer, Integer> pairs) {
 
         for (final Integer mapKey : input) {
@@ -25,10 +26,12 @@ public class Task2 {
             if (i + j == sum){
                 for (int k = 0 ; k < CountSum; k++){
                     System.out.println(i + " " + j);
+
                 }
                 j--;
             }
         }
+
         return pairs;
     }
 
@@ -37,7 +40,7 @@ public class Task2 {
         ParseService parseService = new ParseService();
         Task2 task2 = new Task2();
 
-        int sum = 100;
+        int sum = 13;
         String[] input = numberService.getNumbers();
         Integer[] numbers = parseService.parse(input);
         Map<Integer, Integer> pairs = new HashMap<>();
