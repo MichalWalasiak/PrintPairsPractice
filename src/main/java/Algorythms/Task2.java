@@ -24,7 +24,7 @@ public class Task2 {
             int CountSum = leftCount * rightCount;
 
             if (mapKey + j == sum) {
-                if (mapKey == j) {
+                if (mapKey.equals(j)) {
                     for (int l = 0; l < leftCount - 1; l++) {
                         System.out.println(mapKey + " " + j);
                     }
