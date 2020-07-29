@@ -23,18 +23,16 @@ public class Task2 {
             Integer rightCount = pairs.getOrDefault(j, 0);
             int CountSum = leftCount * rightCount;
 
-            if (mapKey + j == sum) {
-                if (mapKey.equals(j)) {
-                    for (int l = 0; l < leftCount - 1; l++) {
-                        System.out.println(mapKey + " " + j);
-                    }
-                } else {
-                    for (int k = 0; k < CountSum; k++) {
-                        System.out.println(mapKey + " " + j);
-                    }
+            if (mapKey + j == sum && mapKey.equals(j)) {
+                for (int l = 0; l < leftCount - 1; l++) {
+                    System.out.println(mapKey + " " + j);
                 }
-                j--;
+            } else {
+                for (int k = 0; k < CountSum; k++) {
+                    System.out.println(mapKey + " " + j);
+                }
             }
+            j--;
         }
         return pairs;
     }
