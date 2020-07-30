@@ -7,7 +7,7 @@ public class Task2 {
 
     private int pairsCounter = 0;
 
-    public Map<Integer, Integer> findPairs (Integer[] input, int sum, Map<Integer, Integer> pairs) {
+    public void findPairs (Integer[] input, int sum, Map<Integer, Integer> pairs) {
 
         for (final Integer mapKey : input) {
             if (mapKey <= sum && mapKey >= 0) {
@@ -40,7 +40,6 @@ public class Task2 {
         if (pairsCounter == 0){
             throw new IllegalArgumentException("no pairs in set that equals to given sum");
         }
-        return pairs;
     }
 
     public static void main(String[] args) {
